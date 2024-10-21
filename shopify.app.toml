@@ -1,36 +1,23 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "4b63ed978e6aa99e77630e3fc76370ff"
+client_id = "0400caf960695fa38870e6b18763aeeb"
 name = "prueba-heroku"
-handle = "prueba-heroku-1"
-application_url = "https://example.com/"
+handle = "prueba-heroku-2"
+application_url = "https://prueba-heroku1.herokuapp.com"
 embedded = true
+
+[build]
+include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
 scopes = ""
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [ "https://prueba-heroku1.herokuapp.com/auth/callback" ]
 
 [webhooks]
 api_version = "2024-10"
-
-  [[webhooks.subscriptions]]
-  uri = "/webhooks/customers/data_request"
-  compliance_topics = [ "customers/data_request" ]
-
-  [[webhooks.subscriptions]]
-  uri = "/webhooks/customers/redact"
-  compliance_topics = [ "customers/redact" ]
-
-  [[webhooks.subscriptions]]
-  uri = "/webhooks/shop/redact"
-  compliance_topics = [ "shop/redact" ]
-
-  [[webhooks.subscriptions]]
-  topics = [ "app/uninstalled" ]
-  uri = "/webhooks/app/uninstalled"
 
 [pos]
 embedded = false
